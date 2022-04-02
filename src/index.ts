@@ -2,7 +2,6 @@ import { addImport, paths, Program, RecipeBuilder } from '@blitzjs/installer'
 import type { NodePath } from 'ast-types/lib/node-path'
 import j from 'jscodeshift'
 
-// Copied from https://github.com/blitz-js/blitz/pull/805, let's add this to the @blitzjs/installer
 function wrapComponentWithMantineProvider(program: Program) {
   program
     .find(j.JSXElement)
@@ -15,7 +14,14 @@ function wrapComponentWithMantineProvider(program: Program) {
       const { node } = path
       path.replace(
         j.jsxElement(
-          j.jsxOpeningElement(j.jsxIdentifier('MantineProvider')),
+          j.jsxOpeningElement(j.jsxIdentifier(`MantineProvider`), [
+            j.jsxAttribute(j.jsxIdentifier('withGlobalStyles')),
+            j.jsxAttribute(j.jsxIdentifier('withNormalizeCSS')),
+            j.jsxAttribute(
+              j.jsxIdentifier('theme'),
+              j.jsxExpressionContainer(j.identifier("{ colorScheme: 'light' }"))
+            )
+          ]),
           j.jsxClosingElement(j.jsxIdentifier('MantineProvider')),
           [j.jsxText('\n'), node, j.jsxText('\n')]
         )
@@ -38,12 +44,11 @@ export default RecipeBuilder()
     explanation: `Mantine has many packages, but core and hooks are the basics`,
     packages: [
       { name: '@mantine/core', version: 'latest' },
-      { name: '@mantine/hooks', version: 'latest' },
-      { name: '@mantine/next', version: 'latest' }
+      { name: '@mantine/hooks', version: 'latest' }
     ]
   })
   .addTransformFilesStep({
-    stepId: 'importProviderAndReset',
+    stepId: 'importMantineProvider',
     stepName: 'Import MantineProvider component',
     explanation: `Import the Mantine provider into _app, so it is accessible in the whole app`,
     singleFileSearch: paths.app(),
