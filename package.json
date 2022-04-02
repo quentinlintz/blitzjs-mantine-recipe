@@ -4,12 +4,7 @@
   "main": "src/index.ts",
   "description": "A Mantine recipe for Blitz.js",
   "scripts": {
-    "build:dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "lint": "eslint src/* --ext .ts",
-    "service": "nodemon",
-    "start": "node dist/index.js",
-    "release": "standard-version"
+    "test": "echo \"No tests yet\""
   },
   "author": "Quentin Lintz <quentinlintz@outlook.com>",
   "license": "MIT",
