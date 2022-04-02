@@ -7,4 +7,14 @@ export default RecipeBuilder()
   )
   .setOwner('Quentin Lintz <quentinlintz@outlook.com>')
   .setRepoLink('https://github.com/quentinlintz/blitzjs-mantine-recipe')
+  .addAddDependenciesStep({
+    stepId: 'addDeps',
+    stepName: 'Add npm dependencies',
+    explanation: `Mantine has many packages, but core and hooks are the basics`,
+    packages: [
+      { name: '@mantine/core', version: 'latest' },
+      { name: '@mantine/hooks', version: 'latest' },
+      { name: '@mantine/next', version: 'latest' }
+    ]
+  })
   .build()
