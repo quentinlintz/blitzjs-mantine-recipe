@@ -1,0 +1,1 @@
+# Blitzjs-mantine-recipe
