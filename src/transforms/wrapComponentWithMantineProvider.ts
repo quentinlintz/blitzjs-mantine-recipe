@@ -1,4 +1,4 @@
-import { Program } from '@blitzjs/installer'
+import { Program } from 'blitz/installer'
 import j from 'jscodeshift'
 import type { NodePath } from 'ast-types/lib/node-path'
 

@@ -1,6 +1,6 @@
 {
   "name": "blitzjs-mantine-recipe",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "src/index.ts",
   "description": "A Mantine recipe for Blitz.js",
   "scripts": {
@@ -9,24 +9,24 @@
   "author": "Quentin Lintz <quentinlintz@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "@blitzjs/installer": "^0.45.3",
-    "@types/jscodeshift": "0.11.3",
-    "jscodeshift": "0.13.1"
+    "@types/jscodeshift": "0.11.6",
+    "blitz": "^2.0.0-beta.22",
+    "jscodeshift": "0.14.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "prettier": "^2.6.1",
-    "tsconfig-paths": "^3.14.1",
-    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "tsconfig-paths": "^4.1.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^4.6.3"
   }
 }

@@ -1,4 +1,4 @@
-import { addImport, paths, RecipeBuilder } from '@blitzjs/installer'
+import { addImport, paths, RecipeBuilder } from 'blitz/installer'
 import j from 'jscodeshift'
 import wrapComponentWithMantineProvider from './transforms/wrapComponentWithMantineProvider'
 
@@ -15,7 +15,8 @@ export default RecipeBuilder()
     explanation: `Mantine has many packages, but core and hooks are the basics`,
     packages: [
       { name: '@mantine/core', version: 'latest' },
-      { name: '@mantine/hooks', version: 'latest' }
+      { name: '@mantine/hooks', version: 'latest' },
+      { name: '@emotion/react', version: 'latest' }
     ]
   })
   .addTransformFilesStep({
